@@ -3,51 +3,56 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Lightbulb, Rocket, Shield, Users, Target, Globe, CheckCircle } from "lucide-react";
+import { ArrowRight, Lightbulb, Rocket, Shield, Users, Target, Globe, CheckCircle, ClipboardCheck, Zap, BarChart3, MessageSquare } from "lucide-react";
 
 const services = [
   {
-    title: "Innovation Consulting",
-    description: "Tailored strategies to foster innovation within organizations, bridging the gap between ideas and execution.",
+    title: "Strategy & Advisory",
+    description: "Innovation & digital transformation strategy, ecosystem mapping, and program design for long-term roadmaps.",
     icon: Lightbulb,
   },
   {
-    title: "Digital Transformation",
-    description: "Empowering institutions with modern digital tools and processes to stay competitive in a global market.",
+    title: "Digital Products & Solutions",
+    description: "Custom platforms, data reporting systems, and internal tools designed for operational excellence.",
     icon: Rocket,
   },
   {
-    title: "Startup Support",
-    description: "Incubation and acceleration programs designed for African-rooted startups aimed at global scalability.",
-    icon: Target,
+    title: "Programs & Capacity Building",
+    description: "Digital skills, AI training, and entrepreneurship programs designed for MSME and ecosystem growth.",
+    icon: Zap,
   },
   {
-    title: "Policy & Research",
-    description: "Fact-based research and policy advocacy to create enabling environments for innovation to thrive.",
-    icon: Shield,
+    title: "Ecosystem Engagement",
+    description: "Convenings, partnerships, and research-driven public-private collaboration design.",
+    icon: Users,
   },
 ];
 
 const steps = [
   {
     number: "01",
-    title: "Insight",
-    description: "We begin by deep-diving into the challenges and opportunities through rigorous research and analysis.",
+    title: "Understand",
+    description: "We deep-dive into the context to understand the unique challenges and institutional landscape.",
   },
   {
     number: "02",
-    title: "Strategy",
-    description: "Developing a robust, execution-focused roadmap tailored to your specific institutional needs.",
+    title: "Co-create",
+    description: "We work closely with stakeholders to design solutions that are inclusive and practical.",
   },
   {
     number: "03",
-    title: "Execution",
-    description: "We work alongside you to implement solutions, ensuring quality and institutional credibility.",
+    title: "Design",
+    description: "Developing robust, execution-focused strategies tailored to specific measurable outcomes.",
   },
   {
     number: "04",
-    title: "Impact",
-    description: "Measuring outcomes and scale, ensuring sustainable growth and long-term value creation.",
+    title: "Execute",
+    description: "We don't just hand over slides; we stay involved through implementation until it works.",
+  },
+  {
+    number: "05",
+    title: "Track",
+    description: "Rigorous monitoring of impact and outcomes to ensure sustainable value creation.",
   },
 ];
 
@@ -63,69 +68,69 @@ export default function Home() {
     <div className="flex flex-col w-full">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-navy text-white overflow-hidden">
-        {/* Abstract Background Element */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-electric/10 skew-x-12 transform origin-top-right -translate-y-20 -z-0" />
 
-        <div className="section-container relative z-10 pt-20">
+        <div className="section-container relative z-10 pt-20 text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            className="max-w-4xl mx-auto lg:mx-0"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Innovation Rooted in <span className="text-aqua">Trust</span>. Excellence Built for <span className="text-mustard">Impact</span>.
+              We Don&apos;t Just Design Ideas. <br />
+              <span className="text-aqua">We Implement What Works.</span>
             </h1>
-            <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl">
-              Fostering innovation and institutional credibility across Northern Nigeria and beyond. We build globally competitive solutions with African roots.
+            <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Enovate Lab is a strategic consulting and implementation partner helping governments and organizations design, deploy, and scale innovation—especially across Northern Nigeria.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/services" className="btn-primary flex items-center justify-center group">
-                What We Do <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link href="/contact" className="btn-primary flex items-center justify-center">
+                Partner With Us <ArrowRight className="ml-2" />
               </Link>
-              <Link href="/about" className="btn-secondary flex items-center justify-center">
-                Learn About Us
+              <Link href="/services" className="btn-secondary flex items-center justify-center">
+                See What We Do
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Who We Are Section */}
+      {/* Who We Are - Enovate Lab 3.0 */}
       <section className="py-24 bg-white">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div {...fadeIn}>
-              <span className="text-electric font-bold tracking-widest uppercase text-sm mb-4 block">Who We Are</span>
-              <h2 className="text-4xl font-bold text-navy mb-6">A Trusted Partner for Institutional Innovation</h2>
+              <span className="text-electric font-bold tracking-widest uppercase text-sm mb-4 block">Enovate Lab 3.0</span>
+              <h2 className="text-4xl font-bold text-navy mb-6">From Innovation Hub to Strategic Partner</h2>
               <p className="text-navy/70 text-lg mb-6">
-                Enovate Lab is a premier innovation hub and consulting firm dedicated to driving excellence and execution. We specialize in helping governments, institutions, and startups navigate the complexities of modern growth.
+                Enovate Lab has evolved into a full-fledged consulting and implementation partner supporting government institutions, NGOs, and ecosystem builders.
               </p>
               <p className="text-navy/70 text-lg mb-8">
-                Our approach combines deep local context with global best practices, ensuring that innovation is not just a buzzword, but a driver of tangible socio-economic impact.
+                We help partners move from ideas &rarr; strategy &rarr; execution &rarr; measurable outcomes.
               </p>
-              <div className="flex items-center space-x-4">
-                <Users className="text-electric" size={40} />
-                <div>
-                  <h4 className="font-bold text-navy">Execution-Focused Team</h4>
-                  <p className="text-navy/60 text-sm">We don&apos;t just plan; we deliver results that matter.</p>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {[
+                  "Government Institutions",
+                  "Development Organizations",
+                  "Ecosystem Builders",
+                  "Corporate Partners"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center space-x-3 text-navy font-bold">
+                    <CheckCircle className="text-aqua" size={20} />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
             <motion.div
               {...fadeIn}
               transition={{ delay: 0.2 }}
-              className="relative"
+              className="relative aspect-video bg-navy/5 rounded-3xl overflow-hidden border border-navy/10 flex items-center justify-center"
             >
-              <div className="aspect-square bg-aqua/20 rounded-2xl overflow-hidden">
-                {/* Visual placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center text-navy/20 font-bold text-6xl">
-                  ENOVATE
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-mustard p-8 rounded-xl shadow-xl hidden md:block">
-                <p className="text-navy font-bold text-3xl">10+</p>
-                <p className="text-navy/80 text-sm font-medium uppercase tracking-wider">Years of Excellence</p>
+              <div className="text-center p-8">
+                <div className="text-6xl font-black text-navy/10 mb-4 tracking-tighter italic">ENOVATE 3.0</div>
+                <p className="text-navy/40 font-medium">Strategic Implementation Partner</p>
               </div>
             </motion.div>
           </div>
@@ -136,9 +141,8 @@ export default function Home() {
       <section className="py-24 bg-navy text-white">
         <div className="section-container">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-aqua font-bold tracking-widest uppercase text-sm mb-4 block">What We Do</span>
-            <h2 className="text-4xl font-bold mb-6">Execution Across Four Core Pillars</h2>
-            <p className="text-white/60">We provide a comprehensive suite of services designed to foster innovation at every level of society and industry.</p>
+            <h2 className="text-4xl font-bold mb-6">Execution Across Core Pillars</h2>
+            <p className="text-white/60">We provide custom solutions, not templates, built on a collaborative delivery model that prioritizes results.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -163,16 +167,14 @@ export default function Home() {
       {/* How We Work - Steps */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="section-container">
-          <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
-            <div className="max-w-2xl">
-              <span className="text-electric font-bold tracking-widest uppercase text-sm mb-4 block">Our Process</span>
-              <h2 className="text-4xl font-bold text-navy">A Disciplined Approach to Innovation</h2>
-            </div>
-            <p className="text-navy/60 max-w-sm mb-2">Our methodology is designed for clarity, accountability, and maximum institutional impact.</p>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-navy mb-4">How We Work</h2>
+            <p className="text-navy/60 max-w-2xl mx-auto italic font-medium">
+              &quot;We don&apos;t hand over slides and disappear. We stay until it works.&quot;
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 relative">
-            {/* Connecting lines for desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0 relative">
             <div className="absolute top-1/2 left-0 w-full h-0.5 bg-navy/5 -z-0 hidden lg:block" />
 
             {steps.map((step, index) => (
@@ -180,10 +182,10 @@ export default function Home() {
                 key={index}
                 {...fadeIn}
                 transition={{ delay: index * 0.1 }}
-                className="relative z-10 p-8 space-y-6 md:p-10 border-b lg:border-b-0 lg:border-r border-navy/5 last:border-0"
+                className="relative z-10 p-8 space-y-4 border-b lg:border-b-0 lg:border-r border-navy/5 last:border-0 text-center"
               >
-                <span className="text-5xl font-black text-navy/5 block leading-none">{step.number}</span>
-                <h3 className="text-2xl font-bold text-navy">{step.title}</h3>
+                <span className="text-4xl font-black text-electric/10 block leading-none">{step.number}</span>
+                <h3 className="text-xl font-bold text-navy">{step.title}</h3>
                 <p className="text-navy/60 text-sm leading-relaxed">{step.description}</p>
               </motion.div>
             ))}
@@ -195,57 +197,79 @@ export default function Home() {
       <section className="py-24 bg-aqua/5">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeIn} className="order-2 lg:order-1">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-[4/5] bg-navy rounded-2xl"></div>
-                <div className="aspect-[4/5] bg-electric/20 rounded-2xl mt-8"></div>
+            <motion.div {...fadeIn} className="order-2 lg:order-1 relative">
+              <div className="bg-navy rounded-3xl p-12 text-white shadow-2xl">
+                <h3 className="text-2xl font-bold mb-6 text-aqua">Building Where It Matters Most</h3>
+                <p className="text-white/70 mb-8 leading-relaxed">
+                  Our specialized focus on Northern Nigeria is driven by a deep understanding of local realities and strong regional relationships.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                    <BarChart3 className="text-mustard" />
+                    <span className="font-bold">Proven Cross-Sector Experience</span>
+                  </div>
+                  <div className="flex items-center space-x-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                    <Shield className="text-aqua" />
+                    <span className="font-bold">Strong Government Relationships</span>
+                  </div>
+                </div>
               </div>
             </motion.div>
             <motion.div {...fadeIn} className="order-1 lg:order-2">
               <span className="text-electric font-bold tracking-widest uppercase text-sm mb-4 block">Strategic Focus</span>
-              <h2 className="text-4xl font-bold text-navy mb-6">Northern Roots, <span className="text-electric">Global Vision</span></h2>
-              <p className="text-navy/70 text-lg mb-6">
-                Enovate Lab maintains a specialized focus on the Northern Nigerian ecosystem. We understand the unique challenges and vast untapped potential of this region.
+              <h2 className="text-4xl font-bold text-navy mb-6">Northern Roots, <br />Global Standards</h2>
+              <p className="text-navy/70 text-lg mb-8 leading-relaxed">
+                We combine local insights with institutional excellence to build sustainable bridges between regional potential and the global digital economy.
               </p>
-              <ul className="space-y-4 mb-8">
-                {[
-                  "Talent development in emerging tech",
-                  "Institutional capacity building",
-                  "Vibrant startup ecosystem orchestration",
-                  "Government technology integration"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center text-navy font-medium">
-                    <CheckCircle className="text-aqua mr-3" size={20} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/focus" className="text-electric font-bold flex items-center hover:underline group">
-                Deep Dive into Our Regional Impact <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <Link href="/contact" className="btn-primary">
+                Learn About Our Impact
               </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Why Enovate Lab */}
+      {/* Why Enovate Lab & Proof of Work */}
       <section className="py-24 bg-white">
-        <div className="section-container text-center">
-          <h2 className="text-4xl font-bold text-navy mb-16">Why Organizations Trust Enovate Lab</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              { title: "Institutional Credibility", desc: "We maintain the highest standards of professional integrity and institutional excellence." },
-              { title: "Deep Local Networks", desc: "Access to unrivaled relationships across government, academia, and the private sector." },
-              { title: "Proven Track Record", desc: "A history of successful project delivery and measurable impact across diverse sectors." }
-            ].map((reason, i) => (
-              <motion.div key={i} {...fadeIn} transition={{ delay: i * 0.1 }}>
-                <div className="mb-6 flex justify-center text-mustard">
-                  <Globe size={48} strokeWidth={1.5} />
+        <div className="section-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <motion.div {...fadeIn}>
+              <h2 className="text-4xl font-bold text-navy mb-10">Why Enovate Lab?</h2>
+              <div className="space-y-6">
+                {[
+                  { t: "Strategy + Implementation", d: "Combined approach ensuring that plans actually become reality." },
+                  { t: "Deep Expertise", d: "Unrivaled understanding of government, development, and tech ecosystems." },
+                  { t: "Custom Solutions", d: "We reject templates in favor of bespoke tools tailored to your needs." },
+                  { t: "Collaborative Model", d: "We work WITH you, building internal capacity as we deliver." }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start space-x-4">
+                    <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-aqua flex items-center justify-center text-white">
+                      <CheckCircle size={14} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-navy">{item.t}</h4>
+                      <p className="text-navy/60 text-sm">{item.d}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div {...fadeIn} transition={{ delay: 0.2 }}>
+              <h2 className="text-4xl font-bold text-navy mb-10">Proof of Work</h2>
+              <div className="grid grid-cols-2 gap-4 h-full">
+                <div className="bg-navy/5 p-8 rounded-2xl border border-navy/10 flex items-center justify-center text-navy/20 font-bold uppercase tracking-widest h-32">
+                  Partner Logo
                 </div>
-                <h4 className="text-xl font-bold text-navy mb-4">{reason.title}</h4>
-                <p className="text-navy/60 leading-relaxed">{reason.desc}</p>
-              </motion.div>
-            ))}
+                <div className="bg-navy/5 p-8 rounded-2xl border border-navy/10 flex items-center justify-center text-navy/20 font-bold uppercase tracking-widest h-32">
+                  Partner Logo
+                </div>
+                <div className="col-span-2 bg-aqua/5 p-8 rounded-2xl border border-aqua/20">
+                  <div className="text-electric font-black text-3xl mb-1">50+</div>
+                  <div className="text-navy/60 text-sm font-bold uppercase">Successful Projects Delivered</div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -259,16 +283,16 @@ export default function Home() {
           >
             <div className="absolute top-0 left-0 w-full h-full bg-electric/5 -z-0" />
             <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready to Enovate your institution?</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-8 text-aqua">Let&apos;s Build What Works</h2>
               <p className="text-white/70 text-lg mb-12">
                 Join a network of forward-thinking organizations building the future of Africa. Let&apos;s discuss your next project.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <Link href="/contact" className="btn-primary">
-                  Request a Consultation
+                  Partner with Enovate Lab
                 </Link>
-                <Link href="/services" className="px-6 py-3 font-bold border-b-2 border-transparent hover:border-aqua transition-all">
-                  Browse Our Services
+                <Link href="/contact?subject=Strategy%20Session" className="btn-secondary border-white text-white hover:bg-white hover:text-navy">
+                  Request a Strategy Session
                 </Link>
               </div>
             </div>

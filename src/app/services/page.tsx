@@ -2,29 +2,53 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { Lightbulb, Rocket, Zap, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const serviceDetails = [
     {
-        title: "Innovation Consulting",
-        desc: "We help organizations design and implement innovation frameworks that drive growth. From corporate innovation strategies to digital roadmap development.",
-        features: ["Strategic Design", "Digital Roadmap", "Internal R&D Setup"]
+        title: "Strategy & Advisory",
+        desc: "We help organizations design and implement innovation frameworks that drive growth. Our approach is rooted in practical outcomes and strategic institutional alignment.",
+        features: [
+            "Innovation & digital transformation strategy",
+            "Ecosystem & stakeholder mapping",
+            "Program and policy design",
+            "Organizational strategy & roadmaps"
+        ],
+        icon: Lightbulb
     },
     {
-        title: "Digital Transformation",
-        desc: "Modernizing institutional processes through technology. We provide end-to-end digital solutions that enhance efficiency and service delivery.",
-        features: ["Process Automation", "Enterprise Solutions", "Data Analytics"]
+        title: "Digital Products & Solutions",
+        desc: "Modernizing processes through custom-built technology. We provide tools that enhance efficiency and offer high-level organizational insights.",
+        features: [
+            "Custom digital platforms & tools",
+            "Data collection & reporting systems",
+            "Internal tools for operations",
+            "Technology advisory & product scoping"
+        ],
+        icon: Rocket
     },
     {
-        title: "Startup & SME Support",
-        desc: "Building the next generation of African unicorns. We provide incubation, acceleration, and market access for high-growth potential businesses.",
-        features: ["Incubation", "Market Access", "Mentorship Networks"]
+        title: "Programs & Capacity Building",
+        desc: "Equipping the workforce of tomorrow with future-proof skills. We design and deploy large-scale training initiatives across diverse sectors.",
+        features: [
+            "AI & emerging technology training",
+            "Leadership & management soft skills",
+            "Entrepreneurship & MSME development",
+            "Innovation ecosystem capacity building"
+        ],
+        icon: Zap
     },
     {
-        title: "Policy & Research",
-        desc: "Informing the future of innovation through data. We provide advisory services for governments and international organizations on innovation policy.",
-        features: ["Ecosystem Mapping", "Impact Assessment", "Policy Advocacy"]
+        title: "Ecosystem & Stakeholder Engagement",
+        desc: "Building bridges between public and private sectors. We coordinate multi-stakeholder partnerships to solve complex regional challenges.",
+        features: [
+            "Roundtables, convenings & summits",
+            "Multi-stakeholder partnerships",
+            "Ecosystem research & coordination",
+            "Public–private collaboration design"
+        ],
+        icon: Users
     }
 ];
 
@@ -41,35 +65,41 @@ export default function ServicesPage() {
             <section className="bg-navy py-24 text-white">
                 <div className="section-container">
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-                        <h1 className="text-5xl font-bold mb-6">Our Services</h1>
-                        <p className="text-xl text-white/70 max-w-2xl">
-                            Comprehensive solutions designed to foster institutional innovation and sustainable growth.
+                        <h1 className="text-5xl font-bold mb-6 text-aqua">Our Core Services</h1>
+                        <p className="text-xl text-white/70 max-w-2xl leading-relaxed">
+                            We don&apos;t just plan; we stay through the implementation edge.
+                            Explore our comprehensive suite of strategic and technical services.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            <section className="py-24">
+            <section className="py-24 bg-white">
                 <div className="section-container">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {serviceDetails.map((service, i) => (
                             <motion.div
                                 key={i}
                                 {...fadeIn}
-                                className="p-10 border border-navy/5 rounded-3xl hover:border-electric/30 transition-all bg-white shadow-sm"
+                                transition={{ delay: i * 0.1 }}
+                                className="p-10 border border-navy/10 rounded-3xl hover:border-electric/30 transition-all bg-white shadow-xl hover:shadow-2xl flex flex-col"
                             >
+                                <div className="text-electric mb-6">
+                                    <service.icon size={40} />
+                                </div>
                                 <h2 className="text-2xl font-bold text-navy mb-4">{service.title}</h2>
                                 <p className="text-navy/60 mb-8 leading-relaxed">{service.desc}</p>
-                                <ul className="space-y-3 mb-10">
+                                <ul className="space-y-4 mb-10 flex-grow">
                                     {service.features.map((f, j) => (
-                                        <li key={j} className="flex items-center text-navy/80 font-medium">
-                                            <div className="w-1.5 h-1.5 bg-electric rounded-full mr-3" />
-                                            {f}
+                                        <li key={j} className="flex items-start text-navy font-medium">
+                                            <div className="w-1.5 h-1.5 bg-aqua rounded-full mt-2 mr-3 shrink-0" />
+                                            <span className="text-sm">{f}</span>
                                         </li>
                                     ))}
                                 </ul>
-                                <Link href="/contact" className="text-electric font-bold flex items-center hover:underline group">
-                                    Inquire about this service <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                <Link href="/contact" className="btn-primary flex items-center justify-center space-x-2 w-full sm:w-auto">
+                                    <span>Inquire About This Service</span>
+                                    <ArrowRight size={18} />
                                 </Link>
                             </motion.div>
                         ))}
