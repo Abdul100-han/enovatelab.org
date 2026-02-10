@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-ubuntu: "Ubuntu", sans-serif;
+
+  --color-primary: #002f6c;
+  --color-accent: #006bf7;
+  --color-secondary: #54c2c1;
+  --color-highlight: #c4c200;
+
+  --color-navy: #002f6c;
+  --color-electric: #006bf7;
+  --color-aqua: #54c2c1;
+  --color-mustard: #c4c200;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #002f6c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #002f6c;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  font-family: var(--font-ubuntu);
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.btn-primary {
+  @apply bg-accent text-white px-6 py-3 rounded-md font-bold transition-all active:scale-95;
+}
+
+.btn-primary:hover {
+  @apply bg-accent/90 shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-transparent border-2 border-accent text-accent px-6 py-3 rounded-md font-bold transition-all active:scale-95;
+}
+
+.btn-secondary:hover {
+  @apply bg-accent text-white;
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
